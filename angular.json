@@ -24,9 +24,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "src/assets/vendor/fontawesome-free/css/all.min.css",
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/css/ruang-admin.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/vendor/jquery/jquery.min.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/vendor/jquery-easing/jquery.easing.min.js",
+              "src/assets/js/ruang-admin.min.js",
+              "src/assets/vendor/chart.js/Chart.min.js",
+              "src/assets/js/demo/chart-area-demo.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +130,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pms"
+    }
+  },
+  "defaultProject": "pms",
+  "cli": {
+    "analytics": "adc4f4a8-ba40-4001-af93-69941220d6fb"
+  }
 }

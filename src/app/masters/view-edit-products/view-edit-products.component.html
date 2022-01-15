@@ -1,0 +1,51 @@
+<div *ngIf="editDataAvbl">
+  <div class="modal-header">
+    <h5 class="modal-title pull-left">{{boxTitle}}</h5>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <table style="padding:10px;">
+      <tr>
+        <th>Name</th>
+        <th>
+          <input type="text" [(ngModel)]="model.name" name="name" />
+        </th>
+      </tr>
+      <tr *ngIf="isEditing">
+        <th>Status</th>
+        <th>
+          <select [(ngModel)]="model.status" name="status">
+            <option value="0">Select</option>
+            <option value="1">Active</option>
+            <option value="2">In active</option>
+          </select>
+        </th>
+      </tr>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <input type="hidden" [(ngModel)]="model.productId" name="productId" />
+    <button class="btn btn-sm btn-primary" (click)="create_edit();">
+      <i class="fas fa-plus"></i> Save
+    </button> &nbsp;
+    <button type="button" class="btn btn-sm btn-danger" (click)="modalRef.hide()">
+      <i class="fas fa-times"></i> Close</button>
+  </div>
+</div>
+<div *ngIf="!editDataAvbl">
+  <div class="modal-header">
+    <h5 class="modal-title pull-left">No data found!</h5>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    No data found!
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-sm btn-danger" (click)="modalRef.hide()">
+      <i class="fas fa-times"></i> Close</button>
+  </div>
+</div>

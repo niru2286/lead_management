@@ -1,0 +1,27 @@
+.innerPageMenu{
+  list-style: none;
+}
+.innerPageMenu li{
+  padding: 10px;
+  box-shadow: -2px 3px #43858a;
+  border-right: 1px solid;
+  margin-top: 8px;
+  background-color: #6777ef;
+  color: white;
+  font-size: 13px;
+}
+.innerPageMenu a{
+  display: block;
+}
+.innerPageMenu li:hover{
+  padding-left: 8px;
+  cursor:pointer;
+}
+td, th{
+  padding: 0.5rem;
+  background-color: gainsboro;
+}
+.btn-group-sm > .btn, .btn-sm{
+  padding: .25rem .5rem;
+  font-size: 11px;
+}

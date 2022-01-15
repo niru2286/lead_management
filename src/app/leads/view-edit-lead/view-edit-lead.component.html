@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col-md-3" style="border-right: 1px solid #f0e9e9;">
+    <ul class="innerPageMenu">
+      <li>
+        <a (click)="loadBasicComponent();">
+          <i class="fas fa-info-circle"></i> Basic Info
+        </a>
+      </li>
+      <li>
+        <a (click)="loadCallComponent();">
+          <i class="fas fa-headset"></i> Call Details
+        </a>
+      </li>
+      <li>
+        <a (click)="loadContactComponent();">
+          <i class="far fa-address-book"></i> Contacts
+        </a>
+      </li>
+      <li>
+        <a (click)="loadNotesComponent();">
+          <i class="far fa-sticky-note"></i> Notes
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <div *ngIf="basicComponent" class="subPageComponent">
+      <div class="row">
+        <div class="col-md-10">
+          <h4>
+            Basic Info
+          </h4>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-sm btn-primary" (click)="openModal();">
+            <i class="fas fa-plus"></i> Edit Details
+          </button>
+        </div>
+      </div>
+      <table class="table">
+        <tr>
+          <td>Name</td>
+          <td></td>
+          <td>Email</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Phone</td>
+          <td></td>
+          <td>Address</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>City</td>
+          <td></td>
+          <td>State</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Pincode</td>
+          <td></td>
+          <td>Interested In</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Source</td>
+          <td></td>
+          <td>Assigned To</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Comments</td>
+          <td></td>
+          <td>Status</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <button class="btn btn-sm btn-primary">
+              <i class="fas fa-pen"></i> Update
+            </button> &nbsp;
+            <button class="btn btn-sm btn-danger">
+              <i class="fas fa-trash"></i> Delete
+            </button> &nbsp;
+          </td>
+        </tr>
+      </table>
+    </div>
+    <app-view-call *ngIf="callComponent"></app-view-call>
+    <app-view-contacts *ngIf="contactComponent"></app-view-contacts>
+    <app-view-notes *ngIf="notesComponent"></app-view-notes>
+  </div>
+</div>
+

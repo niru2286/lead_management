@@ -1,0 +1,8 @@
+.subPageComponent{
+  border: 1px solid;
+  padding: 10px;
+}
+.btn-group-sm > .btn, .btn-sm{
+  padding: .25rem .5rem;
+  font-size: 11px;
+}

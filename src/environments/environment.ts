@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  serviceRoot: 'http://localhost:49942/api',
+  accountId:1000001
 };
 
 /*

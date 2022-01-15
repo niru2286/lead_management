@@ -1,0 +1,85 @@
+<table class="table">
+  <tr>
+    <th colspan="4">
+      Lead Details
+    </th>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>
+      <input type="text" [(ngModel)]="model.name" name="name" />
+    </td>
+    <td>Email</td>
+    <td>
+      <input type="text" [(ngModel)]="model.emailId" name="emailId" />
+    </td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td>
+      <input type="text" [(ngModel)]="model.mobile" name="mobile" />
+    </td>
+    <td>Address</td>
+    <td>
+      <input type="text" [(ngModel)]="model.address" name="address" />
+    </td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td>
+      <input type="text" [(ngModel)]="model.city" name="city" />
+    </td>
+    <td>State</td>
+    <td>
+      <input type="text" [(ngModel)]="model.state" name="state" />
+    </td>
+  </tr>
+  <tr>
+    <td>Pincode</td>
+    <td>
+      <input type="text" [(ngModel)]="model.pincode" name="pincode" />
+    </td>
+    <td>Interested In</td>
+    <td>
+      <select name="interestedIn" [(ngModel)]="model.interestedIn">
+        <option *ngFor="let option of products | async" [value]="option.productId">{{option.name}}</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>Source</td>
+    <td>
+      <select name="sourceId" [(ngModel)]="model.sourceId">
+        <option *ngFor="let option of sources | async" [value]="option.sourceId">{{option.name}}</option>
+      </select>
+    </td>
+    <td>Assigned To</td>
+    <td>
+      <select name="assignedTo" [(ngModel)]="model.assignedTo">
+        <option *ngFor="let option of members | async" [value]="option.memberId">{{option.name}}</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>Comments</td>
+    <td>
+      <input type="text" [(ngModel)]="model.comments" name="comments" />
+    </td>
+    <td>Status</td>
+    <td>
+      <select name="status" [(ngModel)]="model.status">
+        <option *ngFor="let option of statusList | async" [value]="option.statusId">{{option.name}}</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <button class="btn btn-sm btn-primary" (click)="createLead();">
+        <i class="fas fa-pen"></i> Update
+      </button> &nbsp;
+      <button class="btn btn-sm btn-danger">
+        <i class="fas fa-trash"></i> Delete
+      </button> &nbsp;
+    </td>
+  </tr>
+</table>
