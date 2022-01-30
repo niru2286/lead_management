@@ -1,7 +1,7 @@
 import { TblAccount } from "./account";
 import { TblMember } from "./member";
 
-export interface TblTeam {
+export class TblTeam {
   teamId: number;
   name: string;
   status: number;

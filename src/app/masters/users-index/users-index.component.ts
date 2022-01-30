@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Observable } from 'rxjs';
+import { AppComponent } from 'src/app/app.component';
 import { TblMember } from 'src/app/shared/models/member';
 import { MemberServices } from 'src/app/shared/services/member.services';
 import { environment } from 'src/environments/environment';
@@ -13,10 +14,11 @@ import { ViewEditUsersComponent } from '../view-edit-users/view-edit-users.compo
 })
 export class UsersIndexComponent implements OnInit {
 
-  products: Observable<TblMember[]>;
+  members: Observable<TblMember[]>;
   modalRef: BsModalRef;
   constructor(private _memberServices : MemberServices,
-    private modalService: BsModalService ) {
+    private modalService: BsModalService,
+    private spinnerService: AppComponent ) {
   }
 
   ngOnInit(): void {
@@ -24,11 +26,15 @@ export class UsersIndexComponent implements OnInit {
   }
 
   getAllData(){
-    this.products= this._memberServices.getAll(environment.accountId);
+    this.spinnerService.spinnerStatus(true);
+    this.members= this._memberServices.getAll(environment.accountId);
+    this.spinnerService.spinnerStatus(false);
   }
 
   openAddNewBox(){
+    this.spinnerService.spinnerStatus(true);
     this.modalRef = this.modalService.show(ViewEditUsersComponent);
+    this.spinnerService.spinnerStatus(false);
   }
 
   editBox(id){

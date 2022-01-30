@@ -5,6 +5,7 @@ import { IndexLeadComponent } from './leads/index-lead/index-lead.component';
 import { ViewEditLeadComponent } from './leads/view-edit-lead/view-edit-lead.component';
 import { ProductsIndexComponent } from './masters/products-index/products-index.component';
 import { SourcesIndexComponent } from './masters/sources-index/sources-index.component';
+import { TeamsIndexComponent } from './masters/teams-index/teams-index.component';
 import { UsersIndexComponent } from './masters/users-index/users-index.component';
 
 const routes: Routes = [
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
     path: 'users-master-index', component: UsersIndexComponent,
+  },
+  {
+    path: 'team-master-index', component: TeamsIndexComponent,
   }
 ];
 

@@ -8,9 +8,15 @@
   <div class="modal-body">
     <table style="padding:10px;">
       <tr>
-        <th>Name</th>
+        <th>Name : </th>
         <th>
           <input type="text" [(ngModel)]="model.name" name="name" />
+        </th>
+      </tr>
+      <tr>
+        <th>Email-Id : </th>
+        <th>
+          <input type="text" [(ngModel)]="model.emailId" name="emailId" />
         </th>
       </tr>
       <tr *ngIf="isEditing">

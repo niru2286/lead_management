@@ -21,9 +21,11 @@ export class ViewEditProductsComponent implements OnInit {
   prod_id:number;
   editDataAvbl:boolean;
   @Output() action = new EventEmitter();
-  constructor(private _productServices:ProductsService,
+  constructor(
+    private _productServices:ProductsService,
     private notifyService : NotificationService,
-    public modalRef: BsModalRef) { }
+    public modalRef: BsModalRef
+    ) { }
 
   ngOnInit(): void {
     this.model=new TblProduct();

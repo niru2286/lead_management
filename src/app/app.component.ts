@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pms';
+  spinner:boolean=false;
+
+  spinnerStatus(status :boolean){
+    this.spinner=status;
+  }
 }

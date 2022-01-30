@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { BsModalRef,BsModalService } from 'ngx-bootstrap/modal';
 
 import { ViewEditProductsComponent } from '../view-edit-products/view-edit-products.component';
+import { AppComponent } from 'src/app/app.component';
 @Component({
   selector: 'app-products-index',
   templateUrl: './products-index.component.html',
@@ -16,7 +17,8 @@ export class ProductsIndexComponent implements OnInit {
   products: Observable<TblProduct[]>;
   modalRef: BsModalRef;
   constructor(private _prodcutServices : ProductsService,
-    private modalService: BsModalService ) {
+    private modalService: BsModalService,
+    private spinnerService:AppComponent ) {
   }
 
   ngOnInit(): void {
@@ -24,7 +26,9 @@ export class ProductsIndexComponent implements OnInit {
   }
 
   getAllData(){
+    this.spinnerService.spinnerStatus(true);
     this.products= this._prodcutServices.getAll(environment.accountId);
+    this.spinnerService.spinnerStatus(false);
   }
 
   openAddNewBox(){

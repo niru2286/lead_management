@@ -26,6 +26,7 @@ export class ViewEditSourcesComponent implements OnInit {
   ngOnInit(): void {
     this.model=new TblSource();
     this.editDataAvbl=true;
+    debugger
     if(this.isEditing)
     {
       this.boxTitle="Edit Source";
@@ -42,8 +43,21 @@ export class ViewEditSourcesComponent implements OnInit {
       this.boxTitle="Add New Source";
     }
   }
-
+  validateForm():boolean{
+    if(!this.model.name){
+      this.notifyService.showError("Name can not be empty!", "Error");
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
   create_edit(){
+
+    if(!this.validateForm()){
+      return;
+    }
+
     if(this.isEditing){
       if(this.model.status==0){
         this.notifyService.showError("Select Status!", "Error");

@@ -26,6 +26,7 @@ export class ViewEditUsersComponent implements OnInit {
   ngOnInit(): void {
     this.model=new TblMember();
     this.editDataAvbl=true;
+
     if(this.isEditing)
     {
       this.boxTitle="Edit Member";
@@ -43,7 +44,26 @@ export class ViewEditUsersComponent implements OnInit {
     }
   }
 
+  validateForm():boolean{
+    if(!this.model.name){
+      this.notifyService.showError("Name can not be empty!", "Error");
+      return false;
+    }
+    else if(!this.model.emailId){
+      this.notifyService.showError("Email ID can not be empty!", "Error");
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
   create_edit(){
+
+    if(!this.validateForm()){
+      return;
+    }
+
     if(this.isEditing){
       if(this.model.status==0){
         this.notifyService.showError("Select Status!", "Error");
@@ -76,6 +96,8 @@ export class ViewEditUsersComponent implements OnInit {
         else{
           this.notifyService.showError(resp.message, "Error")
         }
+      },(err) => {
+        this.notifyService.showError(err, "Error")
       });
     }
   }

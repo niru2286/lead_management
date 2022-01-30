@@ -25,6 +25,9 @@ import { SourcesIndexComponent } from './masters/sources-index/sources-index.com
 import { ViewEditSourcesComponent } from './masters/view-edit-sources/view-edit-sources.component';
 import { UsersIndexComponent } from './masters/users-index/users-index.component';
 import { ViewEditUsersComponent } from './masters/view-edit-users/view-edit-users.component';
+import { ExceptionHandler } from './shared/services/errorhandler';
+import { TeamsIndexComponent } from './masters/teams-index/teams-index.component';
+import { ViewEditTeamsComponent } from './masters/view-edit-teams/view-edit-teams.component';
 
 
 @NgModule({
@@ -47,7 +50,9 @@ import { ViewEditUsersComponent } from './masters/view-edit-users/view-edit-user
     SourcesIndexComponent,
     ViewEditSourcesComponent,
     UsersIndexComponent,
-    ViewEditUsersComponent
+    ViewEditUsersComponent,
+    TeamsIndexComponent,
+    ViewEditTeamsComponent,
   ],
   imports: [
     FormsModule,
@@ -57,9 +62,11 @@ import { ViewEditUsersComponent } from './masters/view-edit-users/view-edit-user
     AppRoutingModule,
     ModalModule.forRoot(),
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ExceptionHandler
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
